@@ -7,6 +7,14 @@
     android:background="#FAFCF7"
     tools:context=".MainActivity" >
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="369dp"
+        android:layout_height="332dp"
+        android:background="@drawable/img1"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="47dp" />
+
     <HorizontalScrollView
         android:layout_width="414dp"
         android:layout_height="101dp"
