@@ -9,9 +9,9 @@
 
     <HorizontalScrollView
         android:layout_width="414dp"
-        android:layout_height="72dp"
+        android:layout_height="101dp"
         tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="386dp">
+        tools:layout_editor_absoluteY="391dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -20,36 +20,39 @@
             <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="71dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F2BC57"
                 android:text="Pizzas"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="65dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F2BC57"
-                android:text="Burgers" />
+                android:text="Burgers"
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="113dp"
-                android:layout_height="wrap_content"
+                android:layout_height="63dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F2BC57"
-                android:text="Tacos" />
+                android:text="Tacos"
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="63dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="#F2BC57"
-                android:text="Boissons" />
+                android:text="Boissons"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
