@@ -5,20 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFCF7"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="369dp"
         android:layout_height="332dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/img1"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="47dp" />
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="414dp"
         android:layout_height="101dp"
         android:layout_marginTop="394dp"
+        android:layout_marginBottom="236dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="-2dp">
 
@@ -27,13 +36,13 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonpizzas"
                 android:layout_width="wrap_content"
                 android:layout_height="66dp"
                 android:layout_margin="10dp"
                 android:backgroundTint="#F2BC57"
                 android:text="Pizzas"
-                app:cornerRadius="15dp" />
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/button2"
@@ -65,5 +74,22 @@
                 app:cornerRadius="20dp" />
         </LinearLayout>
     </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="234dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <ListView
+            android:id="@+id/listViewPlats"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="220sp">
+
+    <ImageView
+        android:id="@+id/imageplat"
+        android:layout_width="149dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/img2"
+        app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nomplat"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="14dp"
+        android:textColor="#F2BC57"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/prixplat"
+        app:layout_constraintStart_toEndOf="@+id/imageplat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="48dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/imageplat"
+        app:layout_constraintTop_toBottomOf="@+id/prixplat" />
+
+    <TextView
+        android:id="@+id/prixplat"
+        android:layout_width="74dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="11dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintStart_toEndOf="@+id/imageplat"
+        app:layout_constraintTop_toBottomOf="@+id/nomplat" />
+
+    <TextView
+        android:id="@+id/noteplat"
+        android:layout_width="58dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tempsplat"
+        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+        app:layout_constraintTop_toBottomOf="@+id/prixplat" />
+
+    <TextView
+        android:id="@+id/tempsplat"
+        android:layout_width="67dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="162dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/noteplat"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
