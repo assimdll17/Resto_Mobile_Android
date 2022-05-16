@@ -1,22 +1,28 @@
 package ma.enset.model;
 
-import java.io.Serializable;
+import java.util.List;
 
-public class Plat implements Serializable {
+public class Plat {
+
+    private Long id_plat;
     private String name;
     private String description;
     private String time;
     private double price;
     private  String image;
     private double rate;
+    List<Commande> commandes;
+    Categorie categorie;
 
-    public Plat(String name, String description, String time, double price, String image, double rate) {
-        this.name = name;
-        this.description = description;
-        this.time = time;
-        this.price = price;
-        this.image = image;
-        this.rate = rate;
+    public Plat(String pizzas_b, String mangez_bien, String s, double v, String s1, double v1) {
+    }
+
+    public Long getId_plat() {
+        return id_plat;
+    }
+
+    public void setId_plat(Long id_plat) {
+        this.id_plat = id_plat;
     }
 
     public String getName() {
@@ -43,7 +49,17 @@ public class Plat implements Serializable {
         this.time = time;
     }
 
-    public double getPrice() {
+    public Plat() {
+    }
+
+    public Plat(String name, String description, String time, double price) {
+        this.name = name;
+        this.description = description;
+        this.time = time;
+        this.price = price;
+    }
+
+    public Double getPrice() {
         return price;
     }
 
@@ -67,15 +83,19 @@ public class Plat implements Serializable {
         this.rate = rate;
     }
 
-    @Override
-    public String toString() {
-        return "Plat{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", time='" + time + '\'' +
-                ", price=" + price +
-                ", image='" + image + '\'' +
-                ", rate=" + rate +
-                '}';
+    public List<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(List<Commande> commandes) {
+        this.commandes = commandes;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 }

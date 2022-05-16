@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/USER/AndroidStudioProjects/Resto/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/Resto/app/src/main/res/layout/list_plats_element.xml" value="0.25" />
+        <entry key="..\:/projets/natif/Resto_Mobile_Android/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
+        <entry key="..\:/projets/natif/Resto_Mobile_Android/app/src/main/res/layout/list_plats_element.xml" value="0.1334853090172239" />
+        <entry key="..\:/projets/natif/Resto_Mobile_Android/app/src/main/res/layout/mainadmin.xml" value="0.152" />
+        <entry key="..\:/projets/natif/Resto_Mobile_Android/app/src/main/res/layout/plat_widget.xml" value="0.26992753623188404" />
       </map>
     </option>
   </component>

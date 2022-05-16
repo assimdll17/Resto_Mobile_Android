@@ -2,6 +2,7 @@ package ma.enset;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         Plat p1 = new Plat("Pizzas_B","Mangez bien","10-15min",35.00,"",4.2);
         Plat p2 = new Plat("Pizzas_X","Bon app","15-20min",40.00,"",4.0);
-
+    Button button=findViewById(R.id.button3);
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent next=new Intent(getApplicationContext(),AdminActivity.class);
+            startActivity(next);
+        }
+    });
         List<Plat> plats = new ArrayList<>();
         plats.add(p1);
         plats.add(p2);
@@ -54,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(Call<ListPlatsRes> call, Response<ListPlatsRes> response) {
                         ListPlatsRes listPlats = response.body();
                         for(Plat plat : listPlats.getPlats()){
+                            plats.add(plat);
                             System.out.println(plat);
                             System.out.println("-------------------------------");
                         }
