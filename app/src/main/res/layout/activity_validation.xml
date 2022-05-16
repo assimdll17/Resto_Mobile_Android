@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ValidationActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="325dp"
+        android:layout_height="256dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/valider"
+        app:layout_constraintBottom_toTopOf="@+id/msg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="316dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="262dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:text="Détails de la commande"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msg" />
+
+    <TextView
+        android:id="@+id/prixp_detail"
+        android:layout_width="111dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="29dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/nomp_detail"
+        android:layout_width="176dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="28dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="176dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="6dp"
+        android:text="Quantité"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomp_detail" />
+
+    <TextView
+        android:id="@+id/qte_detail"
+        android:layout_width="108dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="31dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prixp_detail" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="172dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="43dp"
+        android:text="Total"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/total_detail"
+        android:layout_width="96dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="34dp"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qte_detail" />
+</androidx.constraintlayout.widget.ConstraintLayout>

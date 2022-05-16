@@ -2,9 +2,11 @@ package ma.enset;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -39,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         ListView listViewPlats = findViewById(R.id.listViewPlats);
         ListPlatAdapter adapter = new ListPlatAdapter(this, R.layout.list_plats_element,plats);
         listViewPlats.setAdapter(adapter);
+
+        listViewPlats.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), PlatDetailsActivity.class);
+                intent.putExtra("plat",plats.get(i));
+                startActivity(intent);
+            }
+        });
 
         Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:8084/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
