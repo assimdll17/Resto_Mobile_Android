@@ -12,6 +12,14 @@ public class Commande {
 
     Plat plat;
 
+    public Commande(int quantity, String customerName, String customerAddress, double totalPrice, Plat plat) {
+        this.quantity = quantity;
+        this.customerName = customerName;
+        this.customerAddress = customerAddress;
+        TotalPrice = totalPrice;
+        this.plat = plat;
+    }
+
     public Long getId_cmd() {
         return id_cmd;
     }

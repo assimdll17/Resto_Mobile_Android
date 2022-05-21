@@ -1,6 +1,7 @@
 package ma.enset;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -44,7 +45,7 @@ public class AddPlat extends AppCompatActivity {
 
                 Plat plat=new Plat();
                 plat.setName(name.toString());
-                plat.setPrice(Double.parseDouble(String.valueOf(prix)));
+                //plat.setPrice(prix.toString()));
                 plat.setTime(time.toString());
                 plat.setDescription(desc.toString());
 
@@ -57,7 +58,8 @@ public class AddPlat extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Plat> call, Throwable t) {
-
+                        Log.e("error","Error");
+                        Log.e("error",t.getMessage());
                     }
                 });
 

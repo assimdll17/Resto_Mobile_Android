@@ -27,6 +27,16 @@
         <activity android:name=".AddPlat">
 
         </activity>
+        <activity android:name=".CommandeActivity">
+
+        </activity>
+        <activity android:name=".PlatDetailsActivity">
+
+        </activity>
+        <activity android:name=".ValidationActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

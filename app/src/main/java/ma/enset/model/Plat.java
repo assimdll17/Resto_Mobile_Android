@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Plat implements Serializable {
 
-    private Long id_plat;
     private String name;
     private String description;
     private String time;
@@ -15,15 +14,14 @@ public class Plat implements Serializable {
     List<Commande> commandes;
     Categorie categorie;
 
-    public Plat(String pizzas_b, String mangez_bien, String s, double v, String s1, double v1) {
-    }
-
-    public Long getId_plat() {
-        return id_plat;
-    }
-
-    public void setId_plat(Long id_plat) {
-        this.id_plat = id_plat;
+    public Plat(String name, String description, String time, double price, String image, double rate) {
+        this.name = name;
+        this.description = description;
+        this.time = time;
+        this.price = price;
+        this.image = image;
+        this.rate = rate;
+        this.categorie = categorie;
     }
 
     public String getName() {
