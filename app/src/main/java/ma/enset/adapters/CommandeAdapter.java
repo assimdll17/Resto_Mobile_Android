@@ -14,14 +14,15 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import ma.enset.R;
+import ma.enset.model.Commande;
 import ma.enset.model.Plat;
 
-public class PlatAdapter extends ArrayAdapter<Plat> {
+public class CommandeAdapter extends ArrayAdapter<Commande> {
     private int resource;
-    private List<Plat>plats;
-    public PlatAdapter(@NonNull Context context, int resource, List<Plat>plats) {
-        super(context, resource,plats);
-        this.plats=plats;
+    private List<Commande>commandes;
+    public CommandeAdapter(@NonNull Context context, int resource, List<Commande>commandes) {
+        super(context, resource,commandes);
+        this.commandes=commandes;
         this.resource=resource;
     }
 
@@ -37,15 +38,13 @@ public class PlatAdapter extends ArrayAdapter<Plat> {
             listViewItem= LayoutInflater.from(getContext()).inflate(resource,parent,false);
         }
 
-        TextView nom=listViewItem.findViewById(R.id.nom);
-        TextView des=listViewItem.findViewById(R.id.editTextTextMultiLine2);
-        TextView prix=listViewItem.findViewById(R.id.prix);
-        TextView temps=listViewItem.findViewById(R.id.time);
+        TextView numero=listViewItem.findViewById(R.id.numero);
+        TextView qte=listViewItem.findViewById(R.id.quantity);
+        TextView client=listViewItem.findViewById(R.id.client);
 
-        nom.setText(plats.get(position).getName());
-        des.setText(plats.get(position).getDescription());
-        prix.setText( String.valueOf(plats.get(position).getPrice()));
-        temps.setText(plats.get(position).getTime());
+        numero.setText("N° "+commandes.get(position).getId_cmd().toString());
+        qte.setText("qty: "+String.valueOf(commandes.get(position).getQuantity()));
+        client.setText( String.valueOf(commandes.get(position).getCustomerName()));
         System.out.println("ok view");
 
         return  listViewItem;

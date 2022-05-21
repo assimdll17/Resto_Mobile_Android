@@ -1,8 +1,9 @@
 package ma.enset.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Plat {
+public class Plat implements Serializable {
 
     private Long id_plat;
     private String name;

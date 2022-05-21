@@ -2,12 +2,20 @@ package ma.enset.service;
 
 import java.util.List;
 
+import ma.enset.model.Commande;
 import ma.enset.model.Plat;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface PlatRepository {
 
     @GET("plats")
     Call<List<Plat>> getAllplats();
+    @GET("commandes")
+    Call<List<Commande>> getAllcommandes();
+
+    @POST("plat/new")
+    Call<Plat> createPlat(@Body Plat plat);
 }
