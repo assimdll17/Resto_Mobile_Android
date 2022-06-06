@@ -13,8 +13,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ma.enset.model.ListPlatAdapter;
-import ma.enset.model.ListPlatsRes;
+import ma.enset.adapters.ListPlatAdapter;
+import ma.enset.model.ListPlats;
 import ma.enset.model.Plat;
 import ma.enset.service.RestServiceAPI;
 import retrofit2.Call;
@@ -33,28 +33,31 @@ public class MainActivity extends AppCompatActivity {
 
         Plat p1 = new Plat("Pizzas_B","Mangez bien","10-15min",35.00,"",4.2);
         Plat p2 = new Plat("Pizzas_X","Bon app","15-20min",40.00,"",4.0);
-    Button button=findViewById(R.id.button3);
-    button.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent next=new Intent(getApplicationContext(),AdminActivity.class);
-            startActivity(next);
-        }
-    });
-        List<Plat> plats = new ArrayList<>();
-        plats.add(p1);
-        plats.add(p2);
+
+
+        List<Plat> plats2 = new ArrayList<>();
+        plats2.add(p1);
+        plats2.add(p2);
 
         ListView listViewPlats = findViewById(R.id.listViewPlats);
-        ListPlatAdapter adapter = new ListPlatAdapter(this, R.layout.list_plats_element,plats);
+        ListPlatAdapter adapter = new ListPlatAdapter(this, R.layout.list_plats_element,plats2);
         listViewPlats.setAdapter(adapter);
 
         listViewPlats.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getApplicationContext(), PlatDetailsActivity.class);
-                intent.putExtra("plat",plats.get(i));
+                intent.putExtra("plat",plats2.get(i));
                 startActivity(intent);
+            }
+        });
+
+        Button button=findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent next=new Intent(getApplicationContext(),AdminActivity.class);
+                startActivity(next);
             }
         });
 
@@ -66,20 +69,128 @@ public class MainActivity extends AppCompatActivity {
         buttonpizzas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Call<ListPlatsRes> callPlats = serviceAPI.listPlats();
-                callPlats.enqueue(new Callback<ListPlatsRes>() {
+                Call<List<Plat>> callPlats = serviceAPI.listPlatsPizzas();
+                callPlats.enqueue(new Callback<List<Plat>>() {
                     @Override
-                    public void onResponse(Call<ListPlatsRes> call, Response<ListPlatsRes> response) {
-                        ListPlatsRes listPlats = response.body();
-                        for(Plat plat : listPlats.getPlats()){
+                    public void onResponse(Call<List<Plat>> call, Response<List<Plat>> response) {
+                        List<Plat> plats = new ArrayList<>();
+                        List<Plat> listPlats = response.body();
+                        for(Plat plat : listPlats){
                             plats.add(plat);
                             System.out.println(plat);
                             System.out.println("-------------------------------");
                         }
+                        adapter.notifyDataSetChanged();
+
+                        ListPlats listPlats1 = new ListPlats(plats,"Nos pizzas, bon app");
+
+                        Intent intent = new Intent(getApplicationContext(), PlatsByCategory.class);
+                        intent.putExtra("listPlats",listPlats1);
+                        startActivity(intent);
                     }
 
                     @Override
-                    public void onFailure(Call<ListPlatsRes> call, Throwable t) {
+                    public void onFailure(Call<List<Plat>> call, Throwable t) {
+                        Log.e("error","Erreur de réseau");
+                    }
+                });
+
+            }
+        });
+
+        Button buttonburgers = findViewById(R.id.buttonburgers);
+        buttonburgers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call<List<Plat>> callPlats = serviceAPI.listPlatsBurgers();
+                callPlats.enqueue(new Callback<List<Plat>>() {
+                    @Override
+                    public void onResponse(Call<List<Plat>> call, Response<List<Plat>> response) {
+                        List<Plat> plats = new ArrayList<>();
+                        List<Plat> listPlats = response.body();
+                        for(Plat plat : listPlats){
+                            plats.add(plat);
+                            System.out.println(plat);
+                            System.out.println("-------------------------------");
+                        }
+                        adapter.notifyDataSetChanged();
+
+                        ListPlats listPlats1 = new ListPlats(plats,"Nos burgers");
+
+                        Intent intent = new Intent(getApplicationContext(), PlatsByCategory.class);
+                        intent.putExtra("listPlats",listPlats1);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Plat>> call, Throwable t) {
+                        Log.e("error","Erreur de réseau");
+                    }
+                });
+
+            }
+        });
+
+        Button buttontacos = findViewById(R.id.buttontacos);
+        buttontacos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call<List<Plat>> callPlats = serviceAPI.listPlatsTacos();
+                callPlats.enqueue(new Callback<List<Plat>>() {
+                    @Override
+                    public void onResponse(Call<List<Plat>> call, Response<List<Plat>> response) {
+                        List<Plat> plats = new ArrayList<>();
+                        List<Plat> listPlats = response.body();
+                        for(Plat plat : listPlats){
+                            plats.add(plat);
+                            System.out.println(plat);
+                            System.out.println("-------------------------------");
+                        }
+                        adapter.notifyDataSetChanged();
+
+                        ListPlats listPlats1 = new ListPlats(plats,"Nos tacos, les meilleurs");
+
+                        Intent intent = new Intent(getApplicationContext(), PlatsByCategory.class);
+                        intent.putExtra("listPlats",listPlats1);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Plat>> call, Throwable t) {
+                        Log.e("error","Erreur de réseau");
+                    }
+                });
+
+            }
+        });
+
+
+        Button buttonboissons = findViewById(R.id.buttonboissons);
+        buttonboissons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Call<List<Plat>> callPlats = serviceAPI.listPlatsBoissons();
+                callPlats.enqueue(new Callback<List<Plat>>() {
+                    @Override
+                    public void onResponse(Call<List<Plat>> call, Response<List<Plat>> response) {
+                        List<Plat> plats = new ArrayList<>();
+                        List<Plat> listPlats = response.body();
+                        for(Plat plat : listPlats){
+                            plats.add(plat);
+                            System.out.println(plat);
+                            System.out.println("-------------------------------");
+                        }
+                        adapter.notifyDataSetChanged();
+
+                        ListPlats listPlats1 = new ListPlats(plats,"Nos rafraichissantes boissons");
+
+                        Intent intent = new Intent(getApplicationContext(), PlatsByCategory.class);
+                        intent.putExtra("listPlats",listPlats1);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Plat>> call, Throwable t) {
                         Log.e("error","Erreur de réseau");
                     }
                 });

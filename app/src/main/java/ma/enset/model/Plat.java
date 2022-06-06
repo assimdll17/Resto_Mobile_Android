@@ -11,7 +11,6 @@ public class Plat implements Serializable {
     private double price;
     private  String image;
     private double rate;
-    List<Commande> commandes;
     Categorie categorie;
 
     public Plat(String name, String description, String time, double price, String image, double rate) {
@@ -80,14 +79,6 @@ public class Plat implements Serializable {
 
     public void setRate(double rate) {
         this.rate = rate;
-    }
-
-    public List<Commande> getCommandes() {
-        return commandes;
-    }
-
-    public void setCommandes(List<Commande> commandes) {
-        this.commandes = commandes;
     }
 
     public Categorie getCategorie() {

@@ -1,4 +1,4 @@
-package ma.enset.model;
+package ma.enset.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import ma.enset.R;
+import ma.enset.model.Plat;
 
 public class ListPlatAdapter extends ArrayAdapter<Plat> {
     private int resource;

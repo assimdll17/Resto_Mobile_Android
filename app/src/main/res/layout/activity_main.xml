@@ -45,7 +45,7 @@
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonburgers"
                 android:layout_width="wrap_content"
                 android:layout_height="65dp"
                 android:layout_margin="10dp"
@@ -54,7 +54,7 @@
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttontacos"
                 android:layout_width="113dp"
                 android:layout_height="63dp"
                 android:layout_margin="10dp"
@@ -63,7 +63,7 @@
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonboissons"
                 android:layout_width="wrap_content"
                 android:layout_height="63dp"
                 android:layout_margin="10dp"
