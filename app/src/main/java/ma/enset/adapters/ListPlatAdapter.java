@@ -1,6 +1,9 @@
 package ma.enset.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +14,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.net.URL;
 import java.util.List;
 
 import ma.enset.R;
 import ma.enset.model.Plat;
 
 public class ListPlatAdapter extends ArrayAdapter<Plat> {
+    private  List<Plat> plats;
     private int resource;
     public ListPlatAdapter(@NonNull Context context, int resource, @NonNull List<Plat> plats) {
         super(context, resource, plats);
+        this.plats = plats;
         this.resource=resource;
     }
 
@@ -36,6 +42,7 @@ public class ListPlatAdapter extends ArrayAdapter<Plat> {
         ImageView imageplat = listItemView.findViewById(R.id.imageplat);
         //imageplat.setImageDrawable();
 
+
         TextView prixplat = listItemView.findViewById(R.id.prixplat);
         prixplat.setText(getItem(position).getPrice()+" DH");
 
@@ -44,6 +51,18 @@ public class ListPlatAdapter extends ArrayAdapter<Plat> {
 
         TextView tempsplat = listItemView.findViewById(R.id.tempsplat);
         tempsplat.setText(getItem(position).getTime());
+
+
+                try {
+                    Log.i("info",getItem(position).getImage());
+                    URL url = new URL(plats.get(position).getImage());
+                   // URL url=new URL(getItem(position).getImage());
+                    Bitmap bitmap= BitmapFactory.decodeStream(url.openStream());
+                    imageplat.setImageBitmap(bitmap);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
         return listItemView;
     }

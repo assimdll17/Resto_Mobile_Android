@@ -88,4 +88,17 @@ public class Plat implements Serializable {
     public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
+
+    @Override
+    public String toString() {
+        return "Plat{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", time='" + time + '\'' +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                ", rate=" + rate +
+                ", categorie=" + categorie +
+                '}';
+    }
 }
