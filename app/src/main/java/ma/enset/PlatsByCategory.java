@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -27,5 +29,14 @@ public class PlatsByCategory extends AppCompatActivity {
         ListView listPlatsCategory = findViewById(R.id.listviewplatscategory);
         ListPlatAdapter adapter = new ListPlatAdapter(this, R.layout.list_plats_element,listPlats.getPlats());
         listPlatsCategory.setAdapter(adapter);
+
+        listPlatsCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), PlatDetailsActivity.class);
+                intent.putExtra("plat",listPlats.getPlats().get(i));
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -36,7 +36,7 @@ public class CommandeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ValidationActivity.class);
-                intent.putExtra("detailCommande",new DetailCommande(nomClient.getText().toString(),plat.getPrice(),Integer.valueOf(quantite.getText().toString()), plat));
+                intent.putExtra("detailCommande",new DetailCommande(nomClient.getText().toString(),plat.getPrice(),Integer.parseInt(quantite.getText().toString()), plat));
                 startActivity(intent);
             }
         });

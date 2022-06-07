@@ -30,8 +30,8 @@ public class ValidationActivity extends AppCompatActivity {
         msg.setText("M/Mme "+detailCommande.getNomClient()+" votre commande a été enregistrée avec succès");
         nompdetail.setText(detailCommande.getPlat().getName());
         prixpdetail.setText(detailCommande.getPlat().getPrice()+" DH");
-       // qtedetail.setText(detailCommande.getQuantite());
-       // totaldetail.setText(detailCommande.getQuantite()*detailCommande.getPlat().getPrice()+" DH");
+        qtedetail.setText(String.valueOf(detailCommande.getQuantite()));
+        totaldetail.setText(detailCommande.getQuantite()*detailCommande.getPlat().getPrice()+" DH");
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
