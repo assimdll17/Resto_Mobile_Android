@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy strictMode=new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(strictMode);
 
-        Plat p1 = new Plat("Pizzas_B","Mangez bien","10-15min",35.00,"",4.2);
-        Plat p2 = new Plat("Pizzas_X","Bon app","15-20min",40.00,"",4.0);
+        Plat p1 = new Plat("Pizza Regina","Mangez bien","10-15min",35.00,"https://img.cuisineaz.com/660x660/2013/12/20/i42259-photo-de-pizza-regina.jpeg",4.2);
+        Plat p2 = new Plat("Tacos de Lyon","Bon app","15-20min",40.00,"https://www.toute-la-franchise.com/images/zoom/le-tacos-de-lyon-salon-franchise-halal.jpg",4.0);
 
 
         List<Plat> plats2 = new ArrayList<>();
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:8084/")
+        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:8088/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         RestServiceAPI serviceAPI=retrofit.create(RestServiceAPI.class);
 

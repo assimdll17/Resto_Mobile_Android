@@ -18,4 +18,8 @@ public interface PlatRepository {
 
     @POST("plat/new")
     Call<Plat> createPlat(@Body Plat plat);
+
+
+    @POST("commande/new")
+    Call<Commande> createCommande(@Body Commande commande);
 }

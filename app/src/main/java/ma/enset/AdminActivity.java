@@ -38,7 +38,7 @@ public class AdminActivity extends AppCompatActivity {
         listView.setAdapter(userAdapter);
 
 
-        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:8084/")
+        Retrofit retrofit=new Retrofit.Builder().baseUrl("http://10.0.2.2:8088/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
      PlatRepository serviceApi=retrofit.create(PlatRepository.class);
 

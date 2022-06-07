@@ -31,7 +31,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Categorie"
+        android:id="@+id/categorie_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Categories">
@@ -55,13 +55,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/price"
-            android:layout_width="213dp"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:hint="prix du plat">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/prix"
-                android:layout_width="match_parent"
+                android:layout_width="167dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp" />
 
@@ -75,7 +75,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/time"
-                android:layout_width="match_parent"
+                android:layout_width="149dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp" />
 
@@ -96,7 +96,17 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="40dp" />
 
+
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp" />
+
 
     <Button
         android:id="@+id/envoyer"

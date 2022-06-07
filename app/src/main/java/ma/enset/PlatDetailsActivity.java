@@ -3,11 +3,16 @@ package ma.enset;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.net.URL;
 
 import ma.enset.model.Plat;
 
@@ -29,6 +34,17 @@ public class PlatDetailsActivity extends AppCompatActivity {
         nompl.setText(plat.getName());
         prixpl.setText(plat.getPrice()+" DH");
         descrippl.setText(plat.getDescription());
+
+        if(plat.getImage()!=null){
+            try {
+                URL url = new URL(plat.getImage());
+                Bitmap bitmap= BitmapFactory.decodeStream(url.openStream());
+                img.setImageBitmap(bitmap);
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
         commander.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.List;
 
 import ma.enset.R;
@@ -41,11 +43,16 @@ public class CommandeAdapter extends ArrayAdapter<Commande> {
         TextView numero=listViewItem.findViewById(R.id.numero);
         TextView qte=listViewItem.findViewById(R.id.quantity);
         TextView client=listViewItem.findViewById(R.id.client);
-
+        TextView total=listViewItem.findViewById(R.id.total);
+        TextView addresse=listViewItem.findViewById(R.id.adresse);
+        TextView nomplat=listViewItem.findViewById(R.id.nomplt);
         numero.setText("N° "+commandes.get(position).getId_cmd().toString());
-        qte.setText("qty: "+String.valueOf(commandes.get(position).getQuantity()));
-        client.setText( String.valueOf(commandes.get(position).getCustomerName()));
-        System.out.println("ok view");
+        qte.setText("Qté: "+(commandes.get(position).getQuantity()));
+        total.setText("Ttl: "+commandes.get(position).getTotalPrice());
+        client.setText("Clt :"+ (commandes.get(position).getCustomerName()));
+        addresse.setText(commandes.get(position).getCustomerAddress());
+        nomplat.setText("Plat :"+commandes.get(position).getNomplat());
+
 
         return  listViewItem;
     }

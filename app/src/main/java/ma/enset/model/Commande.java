@@ -8,16 +8,23 @@ public class Commande {
     private int quantity;
     private String customerName;
     private String customerAddress;
-    private double TotalPrice;
+    private double totalPrice;
 
-    Plat plat;
+    private  String nomplat;
+    private  double prixplat;
 
-    public Commande(int quantity, String customerName, String customerAddress, double totalPrice, Plat plat) {
+
+    public Commande() {
+    }
+
+    public Commande(Long id_cmd, int quantity, String customerName, String customerAddress, double totalPrice, String nomplat, double prixplat) {
+        this.id_cmd = id_cmd;
         this.quantity = quantity;
         this.customerName = customerName;
         this.customerAddress = customerAddress;
-        TotalPrice = totalPrice;
-        this.plat = plat;
+        this.totalPrice = totalPrice;
+        this.nomplat = nomplat;
+        this.prixplat = prixplat;
     }
 
     public Long getId_cmd() {
@@ -53,18 +60,26 @@ public class Commande {
     }
 
     public double getTotalPrice() {
-        return TotalPrice;
+        return totalPrice;
     }
 
     public void setTotalPrice(double totalPrice) {
-        TotalPrice = totalPrice;
+        this.totalPrice = totalPrice;
     }
 
-    public Plat getPlat() {
-        return plat;
+    public String getNomplat() {
+        return nomplat;
     }
 
-    public void setPlat(Plat plat) {
-        this.plat = plat;
+    public void setNomplat(String nomplat) {
+        this.nomplat = nomplat;
+    }
+
+    public double getPrixplat() {
+        return prixplat;
+    }
+
+    public void setPrixplat(double prixplat) {
+        this.prixplat = prixplat;
     }
 }

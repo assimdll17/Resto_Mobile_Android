@@ -52,17 +52,19 @@ public class ListPlatAdapter extends ArrayAdapter<Plat> {
         TextView tempsplat = listItemView.findViewById(R.id.tempsplat);
         tempsplat.setText(getItem(position).getTime());
 
+        if(plats.get(position).getImage()!=null){
+            try {
+                Log.i("info",getItem(position).getImage());
+                URL url = new URL(plats.get(position).getImage());
+                Bitmap bitmap= BitmapFactory.decodeStream(url.openStream());
+                imageplat.setImageBitmap(bitmap);
 
-                try {
-                    Log.i("info",getItem(position).getImage());
-                    URL url = new URL(plats.get(position).getImage());
-                   // URL url=new URL(getItem(position).getImage());
-                    Bitmap bitmap= BitmapFactory.decodeStream(url.openStream());
-                    imageplat.setImageBitmap(bitmap);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
 
         return listItemView;
     }
