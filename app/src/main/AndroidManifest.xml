@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Resto"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".PlatsByCategory"
             android:exported="false" />
         <activity
@@ -24,11 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminActivity"></activity>
-        <activity android:name=".AddPlat"></activity>
-        <activity android:name=".CommandeActivity"></activity>
-        <activity android:name=".PlatDetailsActivity"></activity>
-        <activity android:name=".ValidationActivity"></activity>
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".AddPlat" />
+        <activity android:name=".CommandeActivity" />
+        <activity android:name=".PlatDetailsActivity" />
+        <activity android:name=".ValidationActivity" />
     </application>
 
 </manifest>
