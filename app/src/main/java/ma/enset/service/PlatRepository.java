@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface PlatRepository {
 
@@ -22,4 +23,8 @@ public interface PlatRepository {
 
     @POST("commande/new")
     Call<Commande> createCommande(@Body Commande commande);
+
+
+    @GET("/commande/{id}")
+    Call<Boolean> deleteCommande(@Path("id") long id);
 }
